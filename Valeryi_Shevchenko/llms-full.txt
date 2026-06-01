@@ -1,0 +1,152 @@
+# COSMOS Boxing — Full Content Index
+# https://cosmosbox.pro
+# llms-full.txt — complete structured content for AI agents and crawlers
+
+---
+
+## Site identity
+
+- Brand: COSMOS
+- Slogan: UNLOCKING POTENTIAL
+- Domain: https://cosmosbox.pro
+- Type: Personal boxing trainer landing page
+- Languages: Russian (primary), Ukrainian (switchable)
+- Location: Mallorca, Spain — Palmanova / Magaluf
+
+---
+
+## Trainer profile
+
+- Full name: Valerii Sevchenko
+- Age: 28 years old
+- Nationality: Ukrainian
+- Qualification: Candidate Master of Sports (KMS) in boxing — the highest amateur classification below Master of Sports in the post-Soviet system
+- Education: Graduated from the Institute of Physical Culture and Sports
+- Coaching experience: 6+ years professional
+- Students trained: 100+
+- Training philosophy: in-person sessions only — Valerii does not offer online training, believing that genuine progress requires live, hands-on coaching in the gym
+- Specialisation: boxing technique, functional conditioning, strength, knockout power development
+
+---
+
+## Services
+
+### 1. Personal session
+- Price: 45€
+- Duration: 60 minutes
+- Format: individual, in-person, Mallorca
+- Includes: technique analysis from scratch, pad and bag work, functional conditioning
+
+### 2. Subscription — 5 sessions
+- Price: 200€
+- Sessions: 5 personal training sessions
+- Saving: 25€ vs individual price
+- Includes: priority scheduling, technique breakdown after every session
+
+### 3. COSMOS PRO — 10 sessions + materials
+- Price: 390€
+- Sessions: 10 personal training sessions
+- Saving: 60€ vs individual + exclusive content
+- Bonus content:
+  - Author video: "Top 20 exercises for a knockout punch"
+  - Regular methodological materials: technique breakdowns, drills for independent practice, coaching guides
+
+---
+
+## Target audience
+
+- Adults 16 years and older
+- Residents and tourists in Mallorca (Palmanova, Magaluf, Calvia area)
+- Beginners with zero boxing experience
+- Intermediate practitioners wanting to improve technique
+- People seeking weight loss, fitness or stress relief through boxing
+- Women (no sparring unless requested)
+- Teenagers 16+ (programme adapted to age and development)
+
+---
+
+## Training process (4 steps)
+
+1. Sign up — fill form or message via Telegram / WhatsApp, pick a convenient time
+2. Warm-up — 10–15 min: joint mobility, cardio warm-up, stretching
+3. Technique and work — punches, defence, combinations on bags and pads; intensity matched to client level
+4. Review and plan — post-session feedback, error analysis, homework for next time
+
+---
+
+## FAQ (key questions)
+
+Q: Is physical fitness required to start?
+A: No. All levels welcome. First session assesses your level; programme is built individually.
+
+Q: From what age do you accept clients?
+A: From 16 years old and above.
+
+Q: What to bring to the first session?
+A: Comfortable sportswear and water. Gloves and wraps available from the trainer. Regular clients advised to get their own gear.
+
+Q: Can boxing be used for weight loss rather than fighting?
+A: Absolutely. Most clients have no competition goals. One hour burns 600–800 kcal.
+
+Q: How many sessions per week for results?
+A: Optimal 2–3 times per week. Technique improvements visible in 2–3 weeks; physical changes in 4–6 weeks.
+
+Q: Where are sessions held in Mallorca?
+A: Palmanova / Magaluf area. Exact location confirmed at time of booking.
+
+Q: Do you train women?
+A: Yes. No sparring unless the client requests it — focus on technique and fitness.
+
+Q: Can I cancel or reschedule?
+A: Yes, with 12 hours notice. Less than 12 hours = session is used. Force majeure handled individually.
+
+Q: Is there a trial session?
+A: First consultation is free. Short meeting or call to discuss goals, fitness level and format. No obligations.
+
+Q: How to pay?
+A: Cash or bank transfer. Subscriptions paid upfront for the full block.
+
+Q: What is included in COSMOS PRO?
+A: 10 personal sessions + author video "Top 20 exercises for a knockout punch" + regular methodological materials: technique guides, drills for solo practice, coaching handbooks.
+
+---
+
+## Reviews (representative)
+
+1. "Aleksei M., Mallorca, 3 months" — came as a complete beginner, within a month felt confident in stance, understood technique, maintained rhythm. Professional, clear explanations.
+
+2. "Katya L., Magaluf, 3 months subscription" — took a 5-session subscription to try; now in her third month. Lost 6 kg, feels strong and confident. Best trainer in Mallorca.
+
+3. "Dmitri V., Magaluf, personal sessions" — trains together with 17-year-old son. Valerii found the right approach to the teenager — motivates without pressure. KMS level visible: spots errors instantly and explains exactly how to fix them.
+
+---
+
+## Contact information
+
+- Phone: +34 658 20 46 77
+- WhatsApp: https://wa.me/34658204677
+- Telegram: https://t.me/Valerii_Sevchenko7 (@Valerii_Sevchenko7)
+- Instagram: https://instagram.com/7777_cosmos_
+- YouTube: https://www.youtube.com/watch?v=TrSPgh7pKJs
+- Booking form: https://cosmosbox.pro/#booking
+
+---
+
+## SEO keywords (contextual)
+
+boxing trainer Mallorca, entrenador de boxeo Mallorca, personal boxing coach Palmanova, boxing lessons Magaluf, бокс тренер Майорка, персональный тренер по боксу Майорка, боксёрские тренировки Пальманова, тренер КМС бокс, COSMOS boxing club Mallorca, Valerii Sevchenko boxing
+
+---
+
+## Structured data hints
+
+- Service type: Personal Sports Training
+- Sport: Boxing
+- Provider: Valerii Sevchenko
+- Provider qualification: Candidate Master of Sports (KMS)
+- Area served: Mallorca, Spain (Palmanova, Magaluf, Calvia)
+- Price range: 45€ – 390€
+- Minimum age: 16
+- Availability: by appointment
+- Languages spoken: Russian, Ukrainian
+
