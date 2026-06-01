@@ -1996,25 +1996,20 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = currentLang === 'ru' ? 'Отправка...' : 'Надсилання...';
 
-  const BOT_TOKEN = '8586747431:AAEIaFXPjn6xGw0SqTOBVJDM6jUrb63uTGs';
-  const CHAT_ID = '2063456528';
+  const WORKER_URL = 'https://cosmos-telegram.pandatv-eu.workers.dev';
 
-  const text = `🥊 *Новая заявка с сайта*\n\n` +
-    `👤 *Имя:* ${name}\n` +
-    `📱 *Контакт:* ${contact}\n` +
-    `🏋️ *Тип тренировки:* ${typeText}\n` +
-    (message ? `💬 *Сообщение:* ${message}\n` : '') +
-    `\n⏰ _${new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Madrid'})}_`;
+  const text = `🥊 Новая заявка с сайта\n\n` +
+    `👤 Имя: ${name}\n` +
+    `📱 Контакт: ${contact}\n` +
+    `🏋️ Тип тренировки: ${typeText}\n` +
+    (message ? `💬 Сообщение: ${message}\n` : '') +
+    `\n⏰ ${new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Madrid'})}`;
 
   try {
-    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    const res = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: text,
-        parse_mode: 'Markdown'
-      })
+      body: JSON.stringify({ text: text })
     });
     const data = await res.json();
     if (data.ok) {
@@ -2027,8 +2022,8 @@ async function submitForm() {
     btn.disabled = false;
     btn.textContent = currentLang === 'ru' ? 'ОТПРАВИТЬ ЗАЯВКУ 🥊' : 'НАДІСЛАТИ ЗАЯВКУ 🥊';
     alert(currentLang === 'ru'
-      ? 'Ошибка отправки. Напишите нам напрямую в Telegram: @Valerii_Shevchenko7'
-      : 'Помилка надсилання. Напишіть нам напряму в Telegram: @Valerii_Shevchenko7');
+      ? 'Ошибка отправки. Напишите напрямую в Telegram: @Valerii_Sevchenko7'
+      : 'Помилка надсилання. Напишіть напряму в Telegram: @Valerii_Sevchenko7');
   }
 }
 
