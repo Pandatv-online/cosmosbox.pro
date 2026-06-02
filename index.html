@@ -2,6 +2,28 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JDJT8LNSWV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JDJT8LNSWV');
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109599417', 'ym');
+    ym(109599417, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109599417" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>COSMOS | Валерий Шевченко — Боксёрский тренер · Майорка</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1996,20 +2018,25 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = currentLang === 'ru' ? 'Отправка...' : 'Надсилання...';
 
-  const WORKER_URL = 'https://cosmos-telegram.pandatv-eu.workers.dev';
+  const BOT_TOKEN = '8586747431:AAEIaFXPjn6xGw0SqTOBVJDM6jUrb63uTGs';
+  const CHAT_ID = '2063456528';
 
-  const text = `🥊 Новая заявка с сайта\n\n` +
-    `👤 Имя: ${name}\n` +
-    `📱 Контакт: ${contact}\n` +
-    `🏋️ Тип тренировки: ${typeText}\n` +
-    (message ? `💬 Сообщение: ${message}\n` : '') +
-    `\n⏰ ${new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Madrid'})}`;
+  const text = `🥊 *Новая заявка с сайта*\n\n` +
+    `👤 *Имя:* ${name}\n` +
+    `📱 *Контакт:* ${contact}\n` +
+    `🏋️ *Тип тренировки:* ${typeText}\n` +
+    (message ? `💬 *Сообщение:* ${message}\n` : '') +
+    `\n⏰ _${new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Madrid'})}_`;
 
   try {
-    const res = await fetch(WORKER_URL, {
+    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text })
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text,
+        parse_mode: 'Markdown'
+      })
     });
     const data = await res.json();
     if (data.ok) {
@@ -2022,8 +2049,8 @@ async function submitForm() {
     btn.disabled = false;
     btn.textContent = currentLang === 'ru' ? 'ОТПРАВИТЬ ЗАЯВКУ 🥊' : 'НАДІСЛАТИ ЗАЯВКУ 🥊';
     alert(currentLang === 'ru'
-      ? 'Ошибка отправки. Напишите напрямую в Telegram: @Valerii_Sevchenko7'
-      : 'Помилка надсилання. Напишіть напряму в Telegram: @Valerii_Sevchenko7');
+      ? 'Ошибка отправки. Напишите нам напрямую в Telegram: @Valerii_Shevchenko7'
+      : 'Помилка надсилання. Напишіть нам напряму в Telegram: @Valerii_Shevchenko7');
   }
 }
 
