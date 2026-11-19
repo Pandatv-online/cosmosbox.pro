@@ -21,7 +21,8 @@ Set once in the Cloudflare dashboard → Workers & Pages → `cosmos-telegram`
 → Settings → Variables and secrets → Add → **Secret**:
 
 - `TELEGRAM_BOT_TOKEN` — token from @BotFather
-- `TELEGRAM_CHAT_ID` — chat that receives the requests (send `/start` to the
+- `TELEGRAM_CHAT_ID` — chat that receives the requests; several chats are
+  separated by commas, e.g. `2063456528,123456789` (each person sends `/start` to the
   bot from that chat first)
 
 Or from a terminal: `npx wrangler secret put TELEGRAM_BOT_TOKEN`.

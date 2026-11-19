@@ -9,7 +9,8 @@
  * Secrets (set in the Cloudflare dashboard → Worker → Settings →
  * Variables and secrets, or with `wrangler secret put`; never commit them):
  *   TELEGRAM_BOT_TOKEN — bot token from @BotFather
- *   TELEGRAM_CHAT_ID   — chat that receives booking requests
+ *   TELEGRAM_CHAT_ID   — chat(s) that receive requests; several ids are
+ *                        separated by commas (owner and coach)
  *
  * Plain variables (wrangler.toml, not secret):
  *   ALLOWED_ORIGINS — comma-separated list of site origins allowed to post
@@ -43,14 +44,23 @@ function clean(value, limit = 200) {
     .slice(0, limit);
 }
 
-async function sendToTelegram(env, text) {
+// TELEGRAM_CHAT_ID may hold several chats separated by commas,
+// e.g. "2063456528,123456789" — every chat gets its own copy.
+function chatIds(env) {
+  return String(env.TELEGRAM_CHAT_ID || "")
+    .split(",")
+    .map((id) => id.trim())
+    .filter(Boolean);
+}
+
+async function sendToChat(env, chatId, text) {
   const response = await fetch(
     `https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        chat_id: env.TELEGRAM_CHAT_ID,
+        chat_id: chatId,
         text,
         disable_web_page_preview: true,
       }),
@@ -61,6 +71,23 @@ async function sendToTelegram(env, text) {
     // Never echo Telegram's response body: an error message could contain
     // part of the token.
     throw new Error(`Telegram API responded ${response.status}`);
+  }
+}
+
+// Sends to every chat in parallel. The request counts as delivered if at
+// least one chat received it, so one blocked recipient does not lose it.
+async function sendToTelegram(env, text) {
+  const ids = chatIds(env);
+  const results = await Promise.allSettled(ids.map((id) => sendToChat(env, id, text)));
+  const failed = [];
+  results.forEach((r, i) => {
+    if (r.status === "rejected") {
+      failed.push(ids[i]);
+      console.error(`chat ${ids[i]} delivery failed:`, r.reason?.message);
+    }
+  });
+  if (failed.length === ids.length) {
+    throw new Error("no chat received the message");
   }
 }
 
