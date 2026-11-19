@@ -2204,29 +2204,16 @@ async function submitForm() {
   btn.disabled = true;
   btn.textContent = currentLang === 'ru' ? 'Отправка...' : 'Надсилання...';
 
-  const BOT_TOKEN = '8586747431:AAEIaFXPjn6xGw0SqTOBVJDM6jUrb63uTGs';
-  const CHAT_ID = '2063456528';
-
-  const esc = (v) => v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const text = `🥊 <b>Новая заявка с сайта</b>\n\n` +
-    `👤 <b>Имя:</b> ${esc(name)}\n` +
-    `📱 <b>Контакт:</b> ${esc(contact)}\n` +
-    `🏋️ <b>Тип тренировки:</b> ${esc(typeText)}\n` +
-    (message ? `💬 <b>Сообщение:</b> ${esc(message)}\n` : '') +
-    `\n⏰ <i>${new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Madrid'})}</i>`;
+  const RELAY_URL = 'https://cosmos-telegram.pandatv-eu.workers.dev';
 
   try {
-    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    const res = await fetch(RELAY_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: text,
-        parse_mode: 'HTML'
-      })
+      body: JSON.stringify({ name, contact, type: typeText, message })
     });
-    const data = await res.json();
-    if (data.ok) {
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok) {
       document.getElementById('formFields').style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
     } else {

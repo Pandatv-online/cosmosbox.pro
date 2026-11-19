@@ -1,0 +1,11 @@
+name = "cosmos-telegram"
+main = "relay.js"
+compatibility_date = "2026-11-01"
+
+# Plain variables — not secret, safe to keep in the repository.
+[vars]
+ALLOWED_ORIGINS = "https://cosmosbox.pro,https://www.cosmosbox.pro"
+
+# TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are NOT stored here.
+# Set them as secrets in the Cloudflare dashboard (Worker → Settings →
+# Variables and secrets) or with `wrangler secret put` — see README.md.
